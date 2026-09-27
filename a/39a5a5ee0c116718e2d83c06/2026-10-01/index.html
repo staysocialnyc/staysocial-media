@@ -1,0 +1,105 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="ss-build" content="2026-09-27T03:46:42.462Z"><title>Link Up List Oct 1 · Approvals</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Nunito:wght@900&display=swap">
+<style>
+:root{--charcoal:#302F30;--blue:#1F6CAB;--gold:#FFB400;--ink:#1E1E1F;--muted:#5B5F66;--bg:#F4F5F7;--card:#fff;--line:#DDE2E9;--ok:#1B7F4B;--okbg:#E6F4EC;--no:#B42318;--nobg:#FDECEA}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,Helvetica,Arial,sans-serif}
+header{background:var(--charcoal);color:#E4E4E4;padding:20px 16px}.wrap{max-width:820px;margin:0 auto;padding-inline:16px}header .wrap{padding:0}
+h1{font:900 26px/1.15 Nunito,Arial,sans-serif;text-transform:uppercase;color:var(--gold);margin:4px 0}.brand{font:900 13px Nunito,Arial;letter-spacing:.12em;text-transform:uppercase}
+.bar{margin-top:10px;background:var(--gold);color:var(--charcoal);font-size:13px;font-weight:600;padding:8px 12px;border-radius:8px}
+main{padding-block:20px 60px;display:grid;gap:26px}h2{font:900 17px Nunito,Arial;text-transform:uppercase;margin:0 0 4px}.hint{color:var(--muted);font-size:13px;margin:0 0 12px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}.list{display:grid;gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;grid-template-columns:84px 1fr;gap:14px}
+.card.approved{border-color:var(--ok);box-shadow:inset 4px 0 0 var(--ok)}.card.declined{border-color:var(--no);box-shadow:inset 4px 0 0 var(--no);opacity:.8}
+.thumb{width:84px;height:105px;border-radius:10px;background:var(--charcoal);object-fit:contain;display:block}.nothumb{width:84px;height:105px;border-radius:10px;background:var(--charcoal);color:#E4E4E4;display:grid;place-items:center;font:900 12px Nunito}
+.order{font:900 12px Nunito;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}.title{font:900 18px/1.2 Nunito;text-transform:uppercase;margin:2px 0;overflow-wrap:anywhere}
+.meta{color:var(--muted);font-size:13px}.flag{font-size:12px;color:var(--no);margin-top:4px}.good{font-size:12px;color:var(--ok);margin-top:4px}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}button{font:600 14px Inter,Arial;border-radius:18px;padding:7px 16px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+button.on-ok{background:var(--ok);border-color:var(--ok);color:#fff}button.on-no{background:var(--no);border-color:var(--no);color:#fff}button.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+button:focus-visible,input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}input.reason{flex:1 1 180px;min-width:0;font:14px Inter;padding:7px 10px;border-radius:8px;border:1px solid var(--line)}
+a{color:var(--blue)}ol{margin:8px 0 0;padding-left:22px}.src{font-size:11px;font-weight:600;padding:1px 6px;border-radius:4px;background:#EEF3F9;color:var(--blue);margin-left:6px}
+@media (max-width:480px){.card{grid-template-columns:64px 1fr}.thumb,.nothumb{width:64px;height:80px}}
+</style></head><body>
+<header><div class="wrap"><div class="brand">Stay Social</div><h1>Link Up List · Oct 1</h1><div id="bar" class="bar"></div></div></header>
+<main class="wrap">
+<section class="box"><h2>Lineup so far</h2><p class="hint">Approved submissions fill The Link Up List first (in submission order), then approved research picks by rank. Past 5 goes to the small-print lists.</p><div id="lineup"></div></section>
+<section><h2>Promoter submissions</h2><p class="hint">In order of submission.</p><div class="list" id="subs"></div></section>
+<section><h2>Research picks</h2><p class="hint">Found on ticket sites, ranked. Tap a flyer or "Ticket page" to check details.</p><div class="list" id="research"></div></section>
+<section id="bizSec"><h2>Foodies Link Up</h2><p class="hint">This week's restaurant feature. Approve one.</p><div class="list" id="business"></div></section>
+<section class="box"><h2>Submit your approval</h2><p class="hint">Opens a short form with your choices attached. Pick your name, enter your PIN, and submit. Undecided items are left out.</p><div id="submit"></div></section>
+<section class="box" id="finalSec" hidden><h2>Final newsletter</h2><div id="final"></div></section>
+</main>
+<script>
+const D = {"issue":"2026-10-01","form":"ODvqZR","deadline":null,"final":null,"final_deadline":null,"edition":null,"subs":[],"research":[],"business":[]};
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const dec = {}; const why = {};
+for (const x of [...D.subs, ...D.research, ...D.business]) if (x.d) dec[x.id] = x.d;
+const closed = () => D.deadline && Date.now() >= Date.parse(D.deadline);
+const fmt = (iso) => new Date(iso).toLocaleString("en-US", { timeZone: "America/New_York", weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+function lineup() {
+  const ok = (a) => a.filter((x) => dec[x.id] === "approved");
+  const subs = ok(D.subs).sort((a, b) => String(a.submittedAt).localeCompare(String(b.submittedAt)));
+  const res = ok(D.research).filter((x) => x.section !== "book_early").sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
+  const top = subs.slice(0, 5), fill = res.slice(0, Math.max(0, 5 - top.length));
+  return { list: [...top.map((x) => ({ ...x, src: "Submitted" })), ...fill.map((x) => ({ ...x, src: "Research" }))], also: [...subs.slice(5), ...res.slice(fill.length)] };
+}
+function card(x, label) {
+  const d = dec[x.id] || "", lock = closed();
+  const thumb = x.thumb ? '<img class="thumb" src="' + esc(x.thumb) + '" alt="Flyer for ' + esc(x.title) + '">' : '<div class="nothumb">NO FLYER</div>';
+  return '<article class="card ' + d + '"><div>' + (x.ticket_url ? '<a href="' + esc(x.ticket_url) + '" target="_blank" rel="noopener">' + thumb + '</a>' : thumb) + '</div><div>'
+    + '<div class="order">' + label + '</div><div class="title">' + esc(x.title) + '</div>'
+    + '<div class="meta">' + esc([x.when, x.venue, x.price, x.age].filter(Boolean).join(" · ")) + '</div>'
+    + (x.organizer ? '<div class="meta">by ' + esc(x.organizer) + '</div>' : '')
+    + (x.ticket_url ? '<div class="meta"><a href="' + esc(x.ticket_url) + '" target="_blank" rel="noopener">Ticket page ↗</a></div>' : '')
+    + (x.check ? '<div class="' + (x.check.ok ? 'good' : 'flag') + '">' + (x.check.ok ? '✓ ' : '⚠ ') + esc(x.check.note) + '</div>' : '')
+    + x.flags.map((f) => '<div class="flag">⚠ ' + esc(f) + '</div>').join("")
+    + (lock ? (d ? '<div class="row"><strong>' + (d === "approved" ? "Approved" : "Declined") + '</strong></div>' : '')
+      : '<div class="row"><button data-id="' + esc(x.id) + '" data-v="approved" class="' + (d === "approved" ? "on-ok" : "") + '">Approve</button>'
+      + '<button data-id="' + esc(x.id) + '" data-v="declined" class="' + (d === "declined" ? "on-no" : "") + '">Decline</button>'
+      + (d === "declined" ? '<input class="reason" data-why="' + esc(x.id) + '" placeholder="Reason (optional)" value="' + esc(why[x.id] || "") + '">' : '') + '</div>')
+    + '</div></article>';
+}
+function bizCard(x) {
+  const d = dec[x.id] || "", lock = closed();
+  const logo = x.logo ? '<img class="thumb" style="height:84px;background:#fff;border:1px solid var(--line)" src="' + esc(x.logo) + '" alt="' + esc(x.name) + ' logo">' : '<div class="nothumb" style="height:84px">LOGO</div>';
+  return '<article class="card ' + d + '"><div>' + logo + '</div><div><div class="order">Option ' + (x.rank ?? "") + (x.city ? " · " + esc(x.city) : "") + '</div>'
+    + '<div class="title">' + esc(x.name) + '</div><div class="meta">' + esc([x.neighborhood, x.cuisine].filter(Boolean).join(" · ")) + '</div>'
+    + '<div class="meta">' + esc([x.person, x.role].filter(Boolean).join(", ")) + '</div><p style="margin:6px 0 0;font-size:14px">' + esc(x.about) + '</p>'
+    + '<div class="meta">' + (x.website ? '<a href="' + esc(x.website) + '" target="_blank" rel="noopener">Website ↗</a>' : '') + (x.reserve_url ? ' · <a href="' + esc(x.reserve_url) + '" target="_blank" rel="noopener">Reservations ↗</a>' : '') + '</div>'
+    + x.flags.map((f) => '<div class="flag">⚠ ' + esc(f) + '</div>').join("")
+    + (lock ? '' : '<div class="row"><button data-id="' + esc(x.id) + '" data-v="approved" class="' + (d === "approved" ? "on-ok" : "") + '">Approve</button><button data-id="' + esc(x.id) + '" data-v="declined" class="' + (d === "declined" ? "on-no" : "") + '">Decline</button></div>')
+    + '</div></article>';
+}
+function formUrl(kind) {
+  const all = [...D.subs, ...D.research, ...D.business];
+  const approved = all.filter((x) => dec[x.id] === "approved").map((x) => x.id);
+  const declined = all.filter((x) => dec[x.id] === "declined").map((x) => x.id + (why[x.id] ? ":" + why[x.id].replace(/[|,:]/g, " ").slice(0, 60) : ""));
+  const biz = D.business.filter((x) => dec[x.id] === "approved").sort((a, b) => a.rank - b.rank)[0];
+  const { list, also } = lineup();
+  const p = new URLSearchParams({ week: D.issue, kind, approved: approved.join(","), declined: declined.join("|"), business: biz ? biz.id : "",
+    summary: kind === "final" ? "Final newsletter approved" : list.length + "/5 in The Link Up List, " + also.length + " in small print" });
+  return "https://tally.so/r/" + D.form + "?" + p.toString();
+}
+function render() {
+  $("bar").textContent = D.deadline ? (closed() ? "Picks are closed (deadline " + fmt(D.deadline) + ")." : "Picks deadline: " + fmt(D.deadline) + ".") : "";
+  const subs = [...D.subs].sort((a, b) => String(a.submittedAt).localeCompare(String(b.submittedAt)));
+  $("subs").innerHTML = subs.length ? subs.map((x, i) => card(x, "#" + (i + 1) + " submitted · " + esc(x.submittedLabel || ""))).join("") : '<p class="hint">No submissions this week.</p>';
+  const res = [...D.research].sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
+  $("research").innerHTML = res.length ? res.map((x) => card(x, x.section === "book_early" ? "Book Early" : (x.market ? esc(x.market) + " · " : "") + "Rank " + (x.rank ?? "?"))).join("") : '<p class="hint">No research picks loaded.</p>';
+  $("bizSec").hidden = !D.business.length;
+  $("business").innerHTML = D.business.map(bizCard).join("");
+  const { list, also } = lineup();
+  $("lineup").innerHTML = list.length ? '<ol>' + list.map((x, i) => '<li><strong>' + esc(x.title) + '</strong> <span class="meta">' + esc(x.when || "") + '</span><span class="src">' + (i === 0 ? "#1 Pick · " : "") + x.src + '</span></li>').join("") + '</ol>' + (also.length ? '<p class="meta">Small print: ' + also.map((x) => esc(x.title)).join(" · ") + '</p>' : '') : '<p class="hint">Nothing approved yet.</p>';
+  $("submit").innerHTML = closed() ? '<p class="hint">Closed.</p>' : '<div class="row" style="margin-top:0"><a class="primary" style="display:inline-block;padding:8px 18px;border-radius:18px;background:var(--blue);color:#fff;text-decoration:none;font-weight:600" href="' + esc(formUrl("picks")) + '" target="_blank" rel="noopener">Submit approval →</a><span class="meta">' + list.length + '/5 in The Link Up List</span></div>';
+  if (D.final) {
+    $("finalSec").hidden = false;
+    const past = D.final_deadline && Date.now() >= Date.parse(D.final_deadline);
+    $("final").innerHTML = (D.final_preview ? '<p style="margin:0 0 8px"><a href="' + esc(D.final_preview) + '" target="_blank" rel="noopener">Open the final newsletter ↗</a>' + (D.final.subject ? ' · “' + esc(D.final.subject) + '”' : '') + '</p>' : '')
+      + (past ? '<p class="hint">The final-approval deadline has passed.</p>' : '<a style="display:inline-block;padding:8px 18px;border-radius:18px;background:var(--blue);color:#fff;text-decoration:none;font-weight:600" href="' + esc(formUrl("final")) + '" target="_blank" rel="noopener">Approve final newsletter →</a><p class="hint" style="margin-top:8px">Due ' + (D.final_deadline ? fmt(D.final_deadline) : "Wed 3:30 PM") + '. Not approved means it doesn\'t go out.</p>');
+  }
+}
+document.addEventListener("click", (e) => { const b = e.target.closest("button[data-id]"); if (!b || closed()) return; const { id, v } = b.dataset; dec[id] = dec[id] === v ? undefined : v; render(); });
+document.addEventListener("input", (e) => { const i = e.target.closest("input[data-why]"); if (i) why[i.dataset.why] = i.value; });
+render();
+</script></body></html>
