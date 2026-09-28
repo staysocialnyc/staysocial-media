@@ -9,7 +9,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 
 const { IG_USER_ID, IG_ACCESS_TOKEN } = process.env;
-const API = `https://graph.facebook.com/${process.env.IG_API_VERSION || "v21.0"}`;
+const API = `https://graph.facebook.com/${process.env.IG_API_VERSION || "v26.0"}`;
 if (!IG_USER_ID || !IG_ACCESS_TOKEN) { console.log("Instagram isn't connected yet (no IG_USER_ID / IG_ACCESS_TOKEN secrets). Nothing to do."); process.exit(0); }
 
 const LOG = "ig-queue/posted.json";
