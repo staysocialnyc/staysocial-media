@@ -14,7 +14,7 @@ if (!IG_USER_ID || !IG_ACCESS_TOKEN) { console.log("Instagram isn't connected ye
 
 const LOG = "ig-queue/posted.json";
 const posted = existsSync(LOG) ? JSON.parse(readFileSync(LOG, "utf8")) : {};
-const queue = readdirSync("ig-queue").filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+const queue = (existsSync("ig-queue") ? readdirSync("ig-queue") : []).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
   .flatMap((f) => JSON.parse(readFileSync(`ig-queue/${f}`, "utf8")).items || []);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const LATE_LIMIT = 3 * 3600e3; // a "tonight" post more than 3 hours late is skipped, not posted
