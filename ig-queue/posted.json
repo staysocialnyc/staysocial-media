@@ -142,9 +142,9 @@
   "2026-10-05:sat-dayparty": {
     "status": "failed",
     "id": "sat-dayparty",
-    "tries": 2,
+    "tries": 3,
     "error": "Invalid user id (code 110/2207018)",
-    "at": "2026-10-10T13:32:38.463Z"
+    "at": "2026-10-10T13:54:50.505Z"
   },
   "2026-10-05:story-sat-am": {
     "status": "posted",
