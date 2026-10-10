@@ -1,6 +1,6 @@
 {
   "week": "2026-10-05",
-  "written_at": "2026-10-05T13:40:29.362Z",
+  "written_at": "2026-10-10T00:15:33.599Z",
   "items": [
     {
       "id": "mon-week-ahead",
@@ -261,6 +261,23 @@
       ]
     },
     {
+      "id": "fri-tonight-reel",
+      "key": "2026-10-05:fri-tonight-reel",
+      "at": "2026-10-09T19:00:00-04:00",
+      "caption": "Carnival weekend is here 🌴 From Brooklyn to Wynwood, this is the Link Up List:\n\n1️⃣ Soca Vs Reggae · 177 2nd Ave, Brooklyn · Sat 10 PM · Free–$33.85\n2️⃣ UNO Miami Carnival ft Nailah Blackman · Miami (venue TBA) · Sat 10 PM · $4.28–$35.13\n3️⃣ Sunkiss N Soca · Miami (venue TBA) · Sat 2 PM · $24.49–$45.77\n4️⃣ Carnival in the Club · Jouvay Night Club, Queens · Sat 10 PM · Free (21+)\n5️⃣ Endless Jam · UNLOCKED Wynwood, Miami · Sun 8 PM\n\nTonight in Miami: Soca Pump — Tour de Islands · Smoke Wynwood · 9 PM (21+)\n\nTickets + the full Link Up List → link in bio 🔗\nSend this to your link-up 👇\n\nStay Social lists events; always confirm details on the official ticket page.\n\n#CaribbeanNYC #MiamiCarnival #MiamiCarnival2026 #SocaNYC #DancehallNYC #NYCFete #NailahBlackman #Soca #Fete #BrooklynNightlife #QueensNightlife #Wynwood #StaySocialNYC",
+      "alt": [
+        "Reel counting down the weekend Link Up List: Endless Jam at UNLOCKED Wynwood Miami Sunday 8 PM; Carnival in the Club at Jouvay Night Club Queens Saturday 10 PM, free; Sunkiss N Soca in Miami Saturday 2 PM; UNO Miami Carnival featuring Nailah Blackman Saturday 10 PM; number one pick Soca Vs Reggae at 177 2nd Ave Brooklyn Saturday 10 PM. Tickets via link in bio."
+      ],
+      "collaborators": [
+        "teamsliNY",
+        "DjTrixta"
+      ],
+      "type": "reel",
+      "video": "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/fri-tonight-reel.mp4",
+      "cover": "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/fri-tonight-reel-01.jpg",
+      "images": []
+    },
+    {
       "id": "story-fri-q",
       "key": "2026-10-05:story-fri-q",
       "at": "2026-10-09T13:00:00-04:00",
@@ -272,6 +289,75 @@
       "type": "story",
       "images": [
         "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/story-fri-q-01.jpg"
+      ],
+      "video": null
+    },
+    {
+      "id": "story-fri-pm",
+      "key": "2026-10-05:story-fri-pm",
+      "at": "2026-10-09T19:00:00-04:00",
+      "caption": "",
+      "alt": [
+        "Story: Tonight, Soca Pump Tour de Islands at Smoke Wynwood, Miami, 9 PM, 21 and over. NYC: rest up, Saturday is loaded. Full list via link in bio."
+      ],
+      "collaborators": [],
+      "type": "story",
+      "images": [
+        "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/story-fri-pm-01.jpg"
+      ],
+      "video": null
+    },
+    {
+      "id": "sat-dayparty",
+      "key": "2026-10-05:sat-dayparty",
+      "at": "2026-10-10T09:00:00-04:00",
+      "caption": "Fete before sunset ☀️ The daytime moves this weekend:\n\n🌞 Sat Oct 10 · Sunkiss N Soca · Miami (venue TBA) · 2 PM · $24.49–$45.77\n🧘🏾 Sun Oct 11 · Puff & Pilates: Soca vs. Dancehall · Endale Arch, Prospect Park · 1 PM · 21+\n\nSave this for your Sunday plans 📌\nTickets + the full Link Up List → link in bio\n\nStay Social lists events; always confirm details on the official ticket page.\n\n#DayParty #DayFete #SocaNYC #DancehallNYC #MiamiCarnival #ProspectPark #BrooklynDayParty #CaribbeanNYC #Soca #StaySocialNYC",
+      "alt": [
+        "Cover: Day moves. Daylight bacchanal, Oct 10 to 11. Fete before sunset in both cities.",
+        "Event flyer: Sunkiss N Soca, Saturday Oct 10 at 2 PM in Miami, venue TBA, $24.49 to $45.77.",
+        "Event flyer: Puff and Pilates, Soca vs Dancehall edition, Sunday Oct 11 at 1 PM at Endale Arch, Prospect Park, 21 and over, price via link.",
+        "Blue closing slide: Day fete, then do it again. Tickets, link in bio."
+      ],
+      "collaborators": [
+        "DjTrixta"
+      ],
+      "type": "carousel",
+      "images": [
+        "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/sat-dayparty-01.jpg",
+        "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/sat-dayparty-02.jpg",
+        "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/sat-dayparty-03.jpg",
+        "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/sat-dayparty-04.jpg"
+      ]
+    },
+    {
+      "id": "sat-tonight-reel",
+      "key": "2026-10-05:sat-tonight-reel",
+      "at": "2026-10-10T19:00:00-04:00",
+      "caption": "Saturday is LOADED 🔥 Where you pulling up tonight?\n\n📍 Spoken Dub · Nicholas Brooklyn, Bed-Stuy · 7 PM · $20\n📍 Soca Vs Reggae · 177 2nd Ave, Brooklyn · 10 PM · Free–$33.85 — this week's #1 Pick\n📍 Carnival in the Club · Jouvay Night Club, Queens · 10 PM · Free (21+)\n📍 In Miami: UNO Miami Carnival ft Nailah Blackman · 10 PM · $4.28–$35.13\n\nDrop your pick in the comments 👇\nTickets + the full Link Up List → link in bio\n\nStay Social lists events; always confirm details on the official ticket page.\n\n#SocaNYC #DancehallNYC #ReggaeNYC #CaribbeanNYC #NYCFete #BrooklynNightlife #QueensNightlife #MiamiCarnival #NailahBlackman #Fete #Bacchanal #StaySocialNYC",
+      "alt": [
+        "Reel of Saturday night flyers: Spoken Dub at Nicholas Brooklyn 7 PM; UNO Miami Carnival featuring Nailah Blackman in Miami 10 PM; Carnival in the Club at Jouvay Night Club Queens 10 PM, free; number one pick Soca Vs Reggae at 177 2nd Ave Brooklyn 10 PM. Tickets via link in bio."
+      ],
+      "collaborators": [
+        "teamsliNY",
+        "DjTrixta"
+      ],
+      "type": "reel",
+      "video": "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/sat-tonight-reel.mp4",
+      "cover": "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/sat-tonight-reel-01.jpg",
+      "images": []
+    },
+    {
+      "id": "story-sat-am",
+      "key": "2026-10-05:story-sat-am",
+      "at": "2026-10-10T09:00:00-04:00",
+      "caption": "",
+      "alt": [
+        "Story list, today Saturday: Sunkiss N Soca in Miami 2 PM; Spoken Dub at Nicholas Brooklyn 7 PM; Soca Vs Reggae at 177 2nd Ave Brooklyn 10 PM, this week's number one pick; Carnival in the Club at Jouvay Night Club Queens 10 PM, free; UNO featuring Nailah Blackman in Miami 10 PM."
+      ],
+      "collaborators": [],
+      "type": "story",
+      "images": [
+        "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/story-sat-am-01.jpg"
       ],
       "video": null
     },
@@ -291,6 +377,21 @@
       "video": null
     },
     {
+      "id": "story-sat-pm",
+      "key": "2026-10-05:story-sat-pm",
+      "at": "2026-10-10T19:00:00-04:00",
+      "caption": "",
+      "alt": [
+        "Story, tonight: Soca Vs Reggae at 177 2nd Ave Brooklyn 10 PM, this week's number one pick, free to $33.85; Carnival in the Club at Jouvay Night Club Queens 10 PM, free, 21 and over."
+      ],
+      "collaborators": [],
+      "type": "story",
+      "images": [
+        "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/story-sat-pm-01.jpg"
+      ],
+      "video": null
+    },
+    {
       "id": "sun-debate",
       "key": "2026-10-05:sun-debate",
       "at": "2026-10-11T09:00:00-04:00",
@@ -305,6 +406,38 @@
       ]
     },
     {
+      "id": "sun-night-reel",
+      "key": "2026-10-05:sun-night-reel",
+      "at": "2026-10-11T19:00:00-04:00",
+      "caption": "Carnival Sunday, last lap 🏁 One more wine before Monday:\n\n📍 Reggae Sunday Lime · Party Life Lounge & Bar, Brooklyn · from 6 PM\n📍 In Miami: Endless Jam · UNLOCKED Wynwood · 8 PM\n📍 In Miami: I Love Soca · Mango's Tropical Cafe, South Beach · 9 PM (21+)\n📍 In Miami: Soca Overdose · Puttery, Wynwood · 10 PM\n\nTag who's finishing the weekend with you 👇\nTickets + the full Link Up List → link in bio\n\nStay Social lists events; always confirm details on the official ticket page.\n\n#CarnivalSunday #MiamiCarnival #SocaMusic #ReggaeNYC #SundayLime #CaribbeanNYC #BrooklynNightlife #Wynwood #SouthBeach #Soca #Dancehall #StaySocialNYC",
+      "alt": [
+        "Reel of Sunday night flyers: Reggae Sunday Lime at Party Life Lounge and Bar Brooklyn from 6 PM; Endless Jam at UNLOCKED Wynwood Miami 8 PM; I Love Soca at Mango's Tropical Cafe South Beach 9 PM; Soca Overdose at Puttery Wynwood 10 PM. Tickets via link in bio."
+      ],
+      "collaborators": [
+        "reggaesundaylime",
+        "_bnyce"
+      ],
+      "type": "reel",
+      "video": "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/sun-night-reel.mp4",
+      "cover": "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/sun-night-reel-01.jpg",
+      "images": []
+    },
+    {
+      "id": "story-sun-am",
+      "key": "2026-10-05:story-sun-am",
+      "at": "2026-10-11T09:00:00-04:00",
+      "caption": "",
+      "alt": [
+        "Story list, today Sunday: Puff and Pilates at Endale Arch Prospect Park 1 PM; Reggae Sunday Lime at Party Life Lounge and Bar Brooklyn 6 PM; Endless Jam at UNLOCKED Wynwood Miami 8 PM; I Love Soca at Mango's Tropical Cafe Miami Beach 9 PM; Soca Overdose at Puttery Wynwood Miami 10 PM."
+      ],
+      "collaborators": [],
+      "type": "story",
+      "images": [
+        "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/story-sun-am-01.jpg"
+      ],
+      "video": null
+    },
+    {
       "id": "story-sun-q",
       "key": "2026-10-05:story-sun-q",
       "at": "2026-10-11T13:00:00-04:00",
@@ -316,6 +449,21 @@
       "type": "story",
       "images": [
         "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/story-sun-q-01.jpg"
+      ],
+      "video": null
+    },
+    {
+      "id": "story-sun-pm",
+      "key": "2026-10-05:story-sun-pm",
+      "at": "2026-10-11T19:00:00-04:00",
+      "caption": "",
+      "alt": [
+        "Story, tonight: Reggae Sunday Lime on now at Party Life Lounge and Bar Brooklyn; Endless Jam at UNLOCKED Wynwood Miami 8 PM; I Love Soca at Mango's Tropical Cafe Miami Beach 9 PM; Soca Overdose at Puttery Wynwood Miami 10 PM."
+      ],
+      "collaborators": [],
+      "type": "story",
+      "images": [
+        "https://staysocialnyc.github.io/staysocial-media/ig/2026-10-05/story-sun-pm-01.jpg"
       ],
       "video": null
     }
