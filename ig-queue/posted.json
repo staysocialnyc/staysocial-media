@@ -124,5 +124,19 @@
     "media_id": "18634413220052007",
     "permalink": "https://www.instagram.com/stories/staysocialnyc/4004261877433982146",
     "at": "2026-10-09T17:00:51.767Z"
+  },
+  "2026-10-05:fri-tonight-reel": {
+    "status": "failed",
+    "id": "fri-tonight-reel",
+    "tries": 1,
+    "error": "Invalid user id (code 110/2207018)",
+    "at": "2026-10-10T00:17:08.976Z"
+  },
+  "2026-10-05:story-fri-pm": {
+    "status": "posted",
+    "id": "story-fri-pm",
+    "media_id": "18152030563543156",
+    "permalink": "https://www.instagram.com/stories/staysocialnyc/4004481615073655542",
+    "at": "2026-10-10T00:17:27.931Z"
   }
 }
