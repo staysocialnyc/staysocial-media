@@ -1,0 +1,48 @@
+# Backup alarm: emails info@staysocialny.com if the Mac missed a newsletter or Instagram step (it was closed, asleep or offline).
+# Runs every 30 minutes on Wednesdays and Sundays; the script decides by New York time what should have happened by now.
+name: Mac backup alarm
+on:
+  schedule:
+    - cron: "5,35 14-23 * * 0,3"
+  workflow_dispatch:
+    inputs:
+      test:
+        description: "Send a test alert"
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: mac-check
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check the Mac's steps
+        env:
+          ICONTACT_API_URL: ${{ secrets.ICONTACT_API_URL }}
+          ICONTACT_ACCOUNT_ID: ${{ secrets.ICONTACT_ACCOUNT_ID }}
+          ICONTACT_CLIENT_FOLDER_ID: ${{ secrets.ICONTACT_CLIENT_FOLDER_ID }}
+          ICONTACT_APP_ID: ${{ secrets.ICONTACT_APP_ID }}
+          ICONTACT_USERNAME: ${{ secrets.ICONTACT_USERNAME }}
+          ICONTACT_API_PASSWORD: ${{ secrets.ICONTACT_API_PASSWORD }}
+          ICONTACT_CAMPAIGN_ID: ${{ secrets.ICONTACT_CAMPAIGN_ID }}
+          ICONTACT_ALERT_LIST_ID: ${{ secrets.ICONTACT_ALERT_LIST_ID }}
+        run: node .github/scripts/mac_check.mjs ${{ inputs.test && '--test' || '' }}
+      - name: Save which alerts were sent
+        if: always()
+        run: |
+          if [ -n "$(git status --porcelain status/alerts.json)" ]; then
+            git config user.name "staysocial-bot"
+            git config user.email "staysocial-bot@users.noreply.github.com"
+            git add status/alerts.json
+            git commit -m "Backup alarm log"
+            git pull --rebase origin main
+            git push origin main
+          fi
