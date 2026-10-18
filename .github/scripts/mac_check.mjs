@@ -20,6 +20,15 @@ const at = (h, m) => mins >= h * 60 + m;
 const nice = (d) => new Date(`${d}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
 
 const alerts = [];
+const plus = (n) => ymd(new Date(ny.getFullYear(), ny.getMonth(), ny.getDate() + n));
+if (ny.getDay() === 1) { // Monday: research for Thursday's issue (runs 10 AM, retries 11 AM and noon)
+  const i = plus(3);
+  if (at(13, 0) && !has(`nl:${i}:research`)) alerts.push([`nl:${i}:no_research`, `Monday research for the ${nice(i)} newsletter did NOT finish`, `The Mac didn't research events for Thursday's issue (it was closed, offline, or Claude's login expired). Open the Mac and message Claude: "run Monday research for ${nice(i)}". Picks are due Wednesday 11 AM.`]);
+}
+if (ny.getDay() === 2) { // Tuesday: promoter submissions + "picks are ready" text (12:05 PM, retries 12:35 and 1:05)
+  const i = plus(2);
+  if (at(13, 30) && !has(`nl:${i}:load`)) alerts.push([`nl:${i}:no_load`, `Tuesday's picks load for the ${nice(i)} newsletter did NOT run`, `Promoter submissions weren't pulled and nobody was texted the picks page. Open the Mac and message Claude: "run Tuesday's load for ${nice(i)}".`]);
+}
 if (ny.getDay() === 3) { // Wednesday: tomorrow's newsletter
   const i = tomorrow, d = has(`nl:${i}:deadline`);
   if (at(11, 45) && !d) alerts.push([`nl:${i}:no_deadline`, `The Mac did NOT run the 11 AM picks deadline for the ${nice(i)} newsletter`, `The final newsletter hasn't been built, so nobody has been asked for final approval. The Mac is probably closed, asleep or offline. Open it (plugged in, online) and message Claude: "build the ${nice(i)} newsletter". Final approval is due 3:30 PM.`]);
