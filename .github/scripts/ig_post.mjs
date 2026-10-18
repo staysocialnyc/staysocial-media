@@ -30,7 +30,7 @@ async function call(path, params, method = "POST") {
 // Optional fields (alt text, collaborators) are retried without them if the API rejects them.
 async function container(params, optional = {}) {
   try { return (await call(`${IG_USER_ID}/media`, { ...params, ...optional })).id; }
-  catch (e) { if (Object.keys(optional).length && e.code === 100) { console.log(`  (retrying without ${Object.keys(optional).join(", ")}: ${e.message})`); return (await call(`${IG_USER_ID}/media`, params)).id; } throw e; }
+  catch (e) { if (Object.keys(optional).length && (e.code === 100 || e.code === 110)) { console.log(`  (retrying without ${Object.keys(optional).join(", ")}: ${e.message})`); return (await call(`${IG_USER_ID}/media`, params)).id; } throw e; }
 }
 async function ready(id, minutes = 8) {
   for (let i = 0; i < minutes * 6; i++) {
@@ -80,6 +80,14 @@ for (const item of queue.sort((a, b) => a.at.localeCompare(b.at))) {
   const due = Date.parse(item.at);
   if (due > now) continue;
   if (now - due > LATE_LIMIT) { posted[item.key] = { status: "missed", id: item.id, at: new Date().toISOString(), note: "more than 3 hours late; skipped" }; changed = true; continue; }
+  // A failed try can still have published (Instagram sometimes errors after posting): look before posting again.
+  if (rec.status === "failed" && item.type !== "story" && item.caption) {
+    try {
+      const recent = (await call(`${IG_USER_ID}/media`, { fields: "id,caption,timestamp,permalink", limit: "15" }, "GET")).data || [];
+      const hit = recent.find((m) => (m.caption || "").trim() === item.caption.trim() && Date.parse(m.timestamp) >= due - 3600e3);
+      if (hit) { posted[item.key] = { status: "posted", id: item.id, media_id: hit.id, permalink: hit.permalink, at: hit.timestamp, note: "found live after an error" }; changed = true; console.log(`  ✓ already live: ${hit.permalink}`); continue; }
+    } catch {}
+  }
   try {
     console.log(`Posting ${item.id} (${item.type}, due ${item.at})`);
     const creation = await build(item);
