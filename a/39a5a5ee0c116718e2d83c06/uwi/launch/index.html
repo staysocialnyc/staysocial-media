@@ -37,19 +37,21 @@ td{padding:4px 0;border-bottom:1px solid #eee}td:last-child{text-align:right;whi
 .bar span{flex:1;font-size:14px}
 .bar a{background:var(--hib);color:#fff;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:999px;white-space:nowrap}
 .bar a.off{background:#555;pointer-events:none}
+.looks img{height:460px;border:1px solid #d9cbb6}.btns button.pick{flex:1 1 52px}
 .foot{font-size:13px;color:var(--mute);margin-top:26px}
 </style></head><body><main>
 <header><img src="img/badge.jpg" alt="Archipelago badge logo"><div><div class="kick">Owner approval · Launch plan</div><h1>Unapologetically West Indian</h1></div></header>
 <p class="lede">The meme page and merch brand. Approve each decision or tap "Change" and say what you want instead. Nothing gets bought, created or posted until you submit.</p>
 <div class="how">1) Tap <b>Approve</b> or <b>Change</b> on each card. 2) Tap <b>Submit</b> at the bottom. 3) On the form pick <b>Owner</b> and enter your PIN from the text.</div>
 
-<h2>The look</h2>
-<img class="wide" src="img/logos.jpg" alt="Logo sheet: stacked wordmark, archipelago badge and entry stamp on white, sand and black">
-<p class="cap">Three logos. Stacked wordmark = main logo, badge = profile photo, stamp = totes and back prints.</p>
-<div class="gal" style="margin-top:12px"><img src="img/card1.jpg" alt="Sample post"><img src="img/card2.jpg" alt="Sample post"></div>
-<p class="cap">Sample posts. The footer tag changes to "Every island knows." after you approve.</p>
-<div class="gal" style="margin-top:12px"><img src="img/01-wordmark.jpg" alt="Wordmark tee"><img src="img/02-roll-call.jpg" alt="Roll Call tee"><img src="img/03-wine-responsibly.jpg" alt="Wine Responsibly tee"><img src="img/04-full-seasoning.jpg" alt="Full Seasoning tee"><img src="img/05-blood-and-winter.jpg" alt="By Blood By Winter hoodie"></div>
-<p class="cap">Launch merch (illustrations, not photos). Colors switch to the UWI palette after you approve.</p>
+<h2>Pick a look</h2>
+<p class="cap" style="margin:0 0 10px">Four directions. Each shows the profile photo, a post and a tee. Swipe sideways, tap to open full size. Pick one in decision 02.</p>
+<div class="gal looks"><a href="img/look-A.jpg" target="_blank"><img src="img/look-A.jpg" alt="Look A, Hibiscus Stamp"></a><a href="img/look-B.jpg" target="_blank"><img src="img/look-B.jpg" alt="Look B, Rum Shop Sign"></a><a href="img/look-C.jpg" target="_blank"><img src="img/look-C.jpg" alt="Look C, Sound Clash"></a><a href="img/look-D.jpg" target="_blank"><img src="img/look-D.jpg" alt="Look D, Madras"></a></div>
+<p class="cap"><b>A</b> Hibiscus Stamp: clean modern streetwear (current plan) · <b>B</b> Rum Shop Sign: hand-painted, warm, nostalgic · <b>C</b> Sound Clash: dance-flyer, loud, nightlife · <b>D</b> Madras: heritage plaid, proud, classy.</p>
+<p class="cap">Every option keeps the full name together, with WEST INDIAN the biggest words (see the trademark card).</p>
+<h2 style="margin-top:22px">The designs (current look)</h2>
+<div class="gal"><img src="img/01-wordmark.jpg" alt="Wordmark tee"><img src="img/02-roll-call.jpg" alt="Roll Call tee"><img src="img/03-wine-responsibly.jpg" alt="Wine Responsibly tee"><img src="img/04-full-seasoning.jpg" alt="Full Seasoning tee"><img src="img/05-blood-and-winter.jpg" alt="By Blood By Winter hoodie"></div>
+<p class="cap">Launch merch (illustrations, not photos). The sayings stay; colors and fonts switch to the look you pick.</p>
 
 <h2>Decisions</h2>
 <div id="list"></div>
@@ -58,13 +60,12 @@ td{padding:4px 0;border-bottom:1px solid #eee}td:last-child{text-align:right;whi
 <div class="bar"><div><span id="count"></span><a id="go" class="off" href="#" target="_blank" rel="noopener">Submit</a></div></div>
 <script>
 const D=[
-{k:"tag",t:"Signature line",v:"Every post ends with “Every island knows.”",w:"Original, and “Unapologetically” alone is a registered clothing trademark, so it can’t go on merch."},
-{k:"palette",t:"Colors and fonts",v:"Hibiscus red, lagoon teal, mango, sand, black and white. No flag colors.",w:"Keeps it separate from Stay Social’s blue, and no island “owns” it."},
-{k:"logo",t:"Logos",v:"Stacked wordmark is the main logo; the archipelago badge is the profile photo.",w:"The badge has no flag and favors no island."},
+{k:"tag",t:"Signature line",v:"Every post ends with “Every island knows.”",w:"Our own phrase, and nobody has it as a catchphrase or trademark."},
+{k:"look",t:"The look",v:"Which direction should the page and merch use? (Shown above.)",w:"I’ll redo the logos, post template and merch files in the one you pick. None uses flag colors, so no island “owns” it.",opts:["A","B","C","D"]},
 {k:"store",t:"Store",v:"Fourthwall, free plan. Print-on-demand, no stock to buy.",w:"$0/month vs about $350–470/year for Shopify. Fourthwall collects and pays the sales tax and replaces misprints. Card fee 2.9% + 30¢."},
 {k:"products",t:"Launch products",v:"4 tees + 1 hoodie: Wordmark, Roll Call, Wine Responsibly, Full Seasoning, By Blood By Winter.",w:"Tote, mug and hat come in wave 2 once their costs are confirmed. Fewer designs = fewer samples to buy."},
 {k:"prices",t:"Prices",v:"Tee $32 · Hoodie $60 · 2XL+ adds $3 / $5. Shipping charged at cost.",w:"About $19 profit per tee and $35.70 per hoodie. Under $110, so no NYC sales tax on clothing."},
-{k:"trademark",t:"Trademark",v:"Free USPTO law-school clinic check first, then file clothing (class 25, $350) after the first real sales.",w:"Filing after sales skips an extra $150 fee. One class keeps the budget under $800."},
+{k:"trademark",t:"Trademark",v:"Always use the full name together, never “Unapologetically” alone, with WEST INDIAN as big or bigger. Free USPTO law-school clinic check first, then file clothing (class 25, $350) after the first real sales.",w:"Nobody owns “Unapologetically West Indian”, but “Unapologetically” alone is registered for clothing (Reg. 8,258,788). 37 other “Unapologetically ___” clothing marks exist side by side, which helps; the clinic confirms. Filing after sales skips an extra $150 fee."},
 {k:"schedule",t:"Posting schedule",v:"Feed posts at 12 PM and 8 PM daily, stories at 10 AM, 3 PM and 9 PM. You approve one batch every Sunday.",w:"About 14 posts a week, posted from GitHub so it runs when the Mac is off."},
 {k:"islands",t:"Island rules",v:"No island leads more than 2 posts a week, at least 8 islands a week, about 1 in 3 posts for everyone. Church-timing jokes OK, no jokes about faith.",w:"Keeps the every-island promise."},
 {k:"fans",t:"Fan jokes",v:"A text-only form. Posted with credit. Never used on merch without a written release.",w:"Screenshots can carry other people’s content; merch needs a real release."},
@@ -79,8 +80,12 @@ const st={};
 const list=document.getElementById("list");
 D.forEach((d,i)=>{
   const el=document.createElement("div");el.className="d";el.id="d-"+d.k;
-  el.innerHTML=`<div class="n">${String(i+1).padStart(2,"0")}</div><h3></h3><p class="v"></p>${d.w?'<p class="why"></p>':""}${d.tbl?"<table>"+d.tbl.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")+"</table>":""}<div class="btns"><button class="yes"></button><button class="no"></button></div><textarea hidden placeholder="What should it be instead?"></textarea>`;
+  el.innerHTML=`<div class="n">${String(i+1).padStart(2,"0")}</div><h3></h3><p class="v"></p>${d.w?'<p class="why"></p>':""}${d.tbl?"<table>"+d.tbl.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")+"</table>":""}<div class="btns">${d.opts?d.opts.map(o=>`<button class="yes pick" data-o="${o}">${o}</button>`).join(""):'<button class="yes"></button>'}<button class="no"></button></div><textarea hidden placeholder="What should it be instead?"></textarea>`;
   el.querySelector("h3").textContent=d.t;el.querySelector(".v").textContent=d.v;if(d.w)el.querySelector(".why").textContent=d.w;
+  if(d.opts){const picks=el.querySelectorAll(".pick"),n=el.querySelector(".no"),ta=el.querySelector("textarea");n.textContent="Something else";
+    const set=(val)=>{st[d.k]={v:val==="no"?"no":"yes",pick:val,note:st[d.k]?.note||""};picks.forEach(b=>b.classList.toggle("on",b.dataset.o===val));n.classList.toggle("on",val==="no");el.className="d "+(val==="no"?"chg":"ok");ta.hidden=val!=="no";upd();};
+    picks.forEach(b=>b.onclick=()=>set(b.dataset.o));n.onclick=()=>set("no");ta.oninput=()=>{st[d.k].note=ta.value.replace(/[|]/g,"/");upd();};
+    list.appendChild(el);return;}
   const [y,n]=el.querySelectorAll("button"),ta=el.querySelector("textarea");
   y.textContent=d.yes||"Approve";n.textContent=d.no||"Change";
   const set=(val)=>{st[d.k]={v:val,note:st[d.k]?.note||""};y.classList.toggle("on",val==="yes");n.classList.toggle("on",val==="no");el.className="d "+(val==="yes"?"ok":"chg");ta.hidden=!(val==="no"&&d.noNote!==false);upd();};
@@ -93,7 +98,7 @@ function upd(){
   document.getElementById("count").textContent=done<D.length?`${done}/${D.length} decided`:`All ${D.length} decided · ${chg} change${chg===1?"":"s"}`;
   const go=document.getElementById("go");
   if(done<D.length){go.className="off";go.href="#";return;}
-  const approved=D.filter(d=>st[d.k].v==="yes").map(d=>d.k).join(",");
+  const approved=D.filter(d=>st[d.k].v==="yes").map(d=>d.opts?d.k+"-"+st[d.k].pick:d.k).join(",");
   const declined=D.filter(d=>st[d.k].v==="no").map(d=>d.k+":"+(d.k==="rollcall"?"drop Cuba, DR, PR":(st[d.k].note||"change (no note)"))).join("|");
   const summary=chg?`UWI launch: ${D.length-chg} approved, ${chg} to change`:`UWI launch: all ${D.length} approved`;
   go.className="";go.href="https://tally.so/r/ODvqZR?"+new URLSearchParams({week:"uwi-launch",kind:"uwi",approved,declined,business:"",summary});
