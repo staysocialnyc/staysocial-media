@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>UWI Launch Decisions</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#141414;--paper:#FFFFFF;--sand:#F6EBDD;--hib:#D7263D;--lag:#0B7A75;--mango:#F4A259;--mute:#5b5550}
+*{box-sizing:border-box}
+body{margin:0;background:var(--sand);color:var(--ink);font:16px/1.5 "DM Sans",Helvetica,Arial,sans-serif;padding:0 16px 140px}
+main{max-width:680px;margin:auto;min-width:0}html,body{overflow-x:hidden}
+header{padding:28px 0 8px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}header>div{min-width:0;max-width:100%}
+header img{width:64px;height:64px;border-radius:50%}
+.kick{font:700 12px "Space Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--hib)}
+h1{font:400 clamp(22px,6.6vw,34px)/1.05 "Archivo Black",Impact,sans-serif;overflow-wrap:anywhere;margin:2px 0 0;text-transform:uppercase;text-wrap:balance}
+.lede{margin:10px 0 18px;color:var(--mute)}
+.how{background:var(--ink);color:#fff;border-radius:14px;padding:14px 16px;font-size:15px}
+.how b{color:var(--mango)}
+h2{font:400 18px "Archivo Black",Impact,sans-serif;text-transform:uppercase;margin:30px 0 10px;letter-spacing:.02em}
+.gal{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory}
+.gal img{height:220px;width:auto;max-width:none;border-radius:12px;scroll-snap-align:start;background:#fff}
+.wide{width:100%;border-radius:12px;display:block}
+.cap{font-size:13px;color:var(--mute);margin:6px 0 0}
+.d{background:var(--paper);border-radius:16px;padding:16px;margin:12px 0;border-left:6px solid var(--ink)}
+.d.ok{border-left-color:var(--lag)}.d.chg{border-left-color:var(--hib)}
+.n{font:700 12px "Space Mono",monospace;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}
+.d h3{margin:2px 0 6px;font-size:18px}
+.v{font-weight:700;margin:0 0 6px}
+.why{font-size:14px;color:var(--mute);margin:0}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.btns button{flex:1 1 120px;border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:999px;padding:10px 12px;font:700 15px "DM Sans",Arial,sans-serif;cursor:pointer}
+.btns button.on.yes{background:var(--lag);border-color:var(--lag);color:#fff}
+.btns button.on.no{background:var(--hib);border-color:var(--hib);color:#fff}
+textarea{width:100%;margin-top:10px;border:2px solid var(--hib);border-radius:10px;padding:10px;font:15px "DM Sans",Arial,sans-serif;min-height:70px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px;font-variant-numeric:tabular-nums}
+td{padding:4px 0;border-bottom:1px solid #eee}td:last-child{text-align:right;white-space:nowrap;padding-left:10px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--ink);color:#fff;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px))}
+.bar div{max-width:680px;margin:auto;display:flex;gap:12px;align-items:center}
+.bar span{flex:1;font-size:14px}
+.bar a{background:var(--hib);color:#fff;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:999px;white-space:nowrap}
+.bar a.off{background:#555;pointer-events:none}
+.foot{font-size:13px;color:var(--mute);margin-top:26px}
+</style></head><body><main>
+<header><img src="img/badge.jpg" alt="Archipelago badge logo"><div><div class="kick">Owner approval · Launch plan</div><h1>Unapologetically West Indian</h1></div></header>
+<p class="lede">The meme page and merch brand. Approve each decision or tap "Change" and say what you want instead. Nothing gets bought, created or posted until you submit.</p>
+<div class="how">1) Tap <b>Approve</b> or <b>Change</b> on each card. 2) Tap <b>Submit</b> at the bottom. 3) On the form pick <b>Owner</b> and enter your PIN from the text.</div>
+
+<h2>The look</h2>
+<img class="wide" src="img/logos.jpg" alt="Logo sheet: stacked wordmark, archipelago badge and entry stamp on white, sand and black">
+<p class="cap">Three logos. Stacked wordmark = main logo, badge = profile photo, stamp = totes and back prints.</p>
+<div class="gal" style="margin-top:12px"><img src="img/card1.jpg" alt="Sample post"><img src="img/card2.jpg" alt="Sample post"></div>
+<p class="cap">Sample posts. The footer tag changes to "Every island knows." after you approve.</p>
+<div class="gal" style="margin-top:12px"><img src="img/01-wordmark.jpg" alt="Wordmark tee"><img src="img/02-roll-call.jpg" alt="Roll Call tee"><img src="img/03-wine-responsibly.jpg" alt="Wine Responsibly tee"><img src="img/04-full-seasoning.jpg" alt="Full Seasoning tee"><img src="img/05-blood-and-winter.jpg" alt="By Blood By Winter hoodie"></div>
+<p class="cap">Launch merch (illustrations, not photos). Colors switch to the UWI palette after you approve.</p>
+
+<h2>Decisions</h2>
+<div id="list"></div>
+<p class="foot">Full details: LAUNCH_PLAN.md in the project. A Stay Social page. Not legal or tax advice.</p>
+</main>
+<div class="bar"><div><span id="count"></span><a id="go" class="off" href="#" target="_blank" rel="noopener">Submit</a></div></div>
+<script>
+const D=[
+{k:"tag",t:"Signature line",v:"Every post ends with “Every island knows.”",w:"Original, and “Unapologetically” alone is a registered clothing trademark, so it can’t go on merch."},
+{k:"palette",t:"Colors and fonts",v:"Hibiscus red, lagoon teal, mango, sand, black and white. No flag colors.",w:"Keeps it separate from Stay Social’s blue, and no island “owns” it."},
+{k:"logo",t:"Logos",v:"Stacked wordmark is the main logo; the archipelago badge is the profile photo.",w:"The badge has no flag and favors no island."},
+{k:"store",t:"Store",v:"Fourthwall, free plan. Print-on-demand, no stock to buy.",w:"$0/month vs about $350–470/year for Shopify. Fourthwall collects and pays the sales tax and replaces misprints. Card fee 2.9% + 30¢."},
+{k:"products",t:"Launch products",v:"4 tees + 1 hoodie: Wordmark, Roll Call, Wine Responsibly, Full Seasoning, By Blood By Winter.",w:"Tote, mug and hat come in wave 2 once their costs are confirmed. Fewer designs = fewer samples to buy."},
+{k:"prices",t:"Prices",v:"Tee $32 · Hoodie $60 · 2XL+ adds $3 / $5. Shipping charged at cost.",w:"About $19 profit per tee and $35.70 per hoodie. Under $110, so no NYC sales tax on clothing."},
+{k:"trademark",t:"Trademark",v:"Free USPTO law-school clinic check first, then file clothing (class 25, $350) after the first real sales.",w:"Filing after sales skips an extra $150 fee. One class keeps the budget under $800."},
+{k:"schedule",t:"Posting schedule",v:"Feed posts at 12 PM and 8 PM daily, stories at 10 AM, 3 PM and 9 PM. You approve one batch every Sunday.",w:"About 14 posts a week, posted from GitHub so it runs when the Mac is off."},
+{k:"islands",t:"Island rules",v:"No island leads more than 2 posts a week, at least 8 islands a week, about 1 in 3 posts for everyone. Church-timing jokes OK, no jokes about faith.",w:"Keeps the every-island promise."},
+{k:"fans",t:"Fan jokes",v:"A text-only form. Posted with credit. Never used on merch without a written release.",w:"Screenshots can carry other people’s content; merch needs a real release."},
+{k:"dates",t:"Launch dates",v:"Quiet launch Oct 26–28 · public launch in the Thu Oct 29 newsletter · merch early access Thu Nov 26 · public drop Fri Nov 27.",w:"Uses regular Thursday issues, so no extra email blast."},
+{k:"target",t:"Follower target",v:"1,500–3,000 followers by day 90 (Jan 26, 2027).",w:"Based on Stay Social’s own numbers, not wishful math."},
+{k:"collabs",t:"Collabs",v:"No paid collabs. Don’t pitch @majahhype.",w:"His 2023 “Guyana is not Caribbean” comment breaks the every-island promise."},
+{k:"budget",t:"Budget",v:"About $611–$691 (lean, without the trademark: about $261–$341).",tbl:[["Domain (1 year)","$11"],["Samples: 3 tees + 2 hoodies","$100–130"],["Giveaway prizes, 90 days","$100"],["Trademark, after sales","$350"],["Clinic check","$0"],["Optional boost","$0–50"],["Reserve","$50"]]},
+{k:"rollcall",t:"Roll Call tee: Cuba, DR, Puerto Rico?",v:"Adding St. Martin, Bonaire and St. Barths either way. Keep Cuba, the Dominican Republic and Puerto Rico on the list?",w:"My default is keep: the tee already ends “+ wherever your grandmother is from”.",yes:"Keep them",no:"Drop them",noNote:false},
+{k:"scripts",t:"OK to build the automation",v:"Let Claude change the Stay Social scripts to add second-account posting, a UWI approval page (texts to you only), and the newsletter launch band.",w:"Needed before anything can post. Stay Social keeps working the same."}
+];
+const st={};
+const list=document.getElementById("list");
+D.forEach((d,i)=>{
+  const el=document.createElement("div");el.className="d";el.id="d-"+d.k;
+  el.innerHTML=`<div class="n">${String(i+1).padStart(2,"0")}</div><h3></h3><p class="v"></p>${d.w?'<p class="why"></p>':""}${d.tbl?"<table>"+d.tbl.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")+"</table>":""}<div class="btns"><button class="yes"></button><button class="no"></button></div><textarea hidden placeholder="What should it be instead?"></textarea>`;
+  el.querySelector("h3").textContent=d.t;el.querySelector(".v").textContent=d.v;if(d.w)el.querySelector(".why").textContent=d.w;
+  const [y,n]=el.querySelectorAll("button"),ta=el.querySelector("textarea");
+  y.textContent=d.yes||"Approve";n.textContent=d.no||"Change";
+  const set=(val)=>{st[d.k]={v:val,note:st[d.k]?.note||""};y.classList.toggle("on",val==="yes");n.classList.toggle("on",val==="no");el.className="d "+(val==="yes"?"ok":"chg");ta.hidden=!(val==="no"&&d.noNote!==false);upd();};
+  y.onclick=()=>set("yes");n.onclick=()=>set("no");
+  ta.oninput=()=>{st[d.k].note=ta.value.replace(/[|]/g,"/");upd();};
+  list.appendChild(el);
+});
+function upd(){
+  const done=D.filter(d=>st[d.k]).length, chg=D.filter(d=>st[d.k]?.v==="no").length;
+  document.getElementById("count").textContent=done<D.length?`${done}/${D.length} decided`:`All ${D.length} decided · ${chg} change${chg===1?"":"s"}`;
+  const go=document.getElementById("go");
+  if(done<D.length){go.className="off";go.href="#";return;}
+  const approved=D.filter(d=>st[d.k].v==="yes").map(d=>d.k).join(",");
+  const declined=D.filter(d=>st[d.k].v==="no").map(d=>d.k+":"+(d.k==="rollcall"?"drop Cuba, DR, PR":(st[d.k].note||"change (no note)"))).join("|");
+  const summary=chg?`UWI launch: ${D.length-chg} approved, ${chg} to change`:`UWI launch: all ${D.length} approved`;
+  go.className="";go.href="https://tally.so/r/ODvqZR?"+new URLSearchParams({week:"uwi-launch",kind:"uwi",approved,declined,business:"",summary});
+}
+upd();
+</script></body></html>
