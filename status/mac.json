@@ -38,5 +38,9 @@
   "nl:2026-10-22:final_deadline": {
     "value": "NO_FINAL_BUILT",
     "at": "2026-10-19T19:32:32.732Z"
+  },
+  "nl:2026-10-22:load": {
+    "value": "done",
+    "at": "2026-10-20T16:06:17.144Z"
   }
 }
