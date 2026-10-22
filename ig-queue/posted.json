@@ -479,5 +479,19 @@
     "media_id": "18234269116324175",
     "permalink": "https://www.instagram.com/stories/staysocialnyc/4013684018873638382",
     "at": "2026-10-22T17:00:51.872Z"
+  },
+  "2026-10-19:thu-countdown-reel": {
+    "status": "failed",
+    "id": "thu-countdown-reel",
+    "tries": 1,
+    "error": "User not visible (code 210/2207066)",
+    "at": "2026-10-22T23:11:32.863Z"
+  },
+  "2026-10-19:story-thu-pm": {
+    "status": "posted",
+    "id": "story-thu-pm",
+    "media_id": "18375821095300351",
+    "permalink": "https://www.instagram.com/stories/staysocialnyc/4013870686717136200",
+    "at": "2026-10-22T23:11:44.234Z"
   }
 }
