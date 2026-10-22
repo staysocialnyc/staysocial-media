@@ -483,9 +483,9 @@
   "2026-10-19:thu-countdown-reel": {
     "status": "failed",
     "id": "thu-countdown-reel",
-    "tries": 1,
+    "tries": 2,
     "error": "User not visible (code 210/2207066)",
-    "at": "2026-10-22T23:11:32.863Z"
+    "at": "2026-10-22T23:40:22.281Z"
   },
   "2026-10-19:story-thu-pm": {
     "status": "posted",
