@@ -458,5 +458,19 @@
     "media_id": "18041202029830983",
     "permalink": "https://www.instagram.com/stories/staysocialnyc/4013144853861242201",
     "at": "2026-10-21T23:09:57.596Z"
+  },
+  "2026-10-19:thu-this-weekend": {
+    "status": "failed",
+    "id": "thu-this-weekend",
+    "tries": 1,
+    "error": "User not visible (code 210/2207066)",
+    "at": "2026-10-22T13:05:15.660Z"
+  },
+  "2026-10-19:story-thu-am": {
+    "status": "posted",
+    "id": "story-thu-am",
+    "media_id": "17912001672492879",
+    "permalink": "https://www.instagram.com/stories/staysocialnyc/4013565530220645895",
+    "at": "2026-10-22T13:05:35.452Z"
   }
 }
