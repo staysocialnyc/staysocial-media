@@ -553,9 +553,9 @@
   "2026-10-19:sat-tonight-reel": {
     "status": "failed",
     "id": "sat-tonight-reel",
-    "tries": 1,
+    "tries": 2,
     "error": "User not visible (code 210/2207066)",
-    "at": "2026-10-24T23:03:40.052Z"
+    "at": "2026-10-24T23:34:37.429Z"
   },
   "2026-10-19:story-sat-pm": {
     "status": "posted",
