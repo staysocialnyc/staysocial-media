@@ -532,9 +532,9 @@
   "2026-10-19:sat-dayparty": {
     "status": "failed",
     "id": "sat-dayparty",
-    "tries": 1,
+    "tries": 2,
     "error": "User not visible (code 210/2207066)",
-    "at": "2026-10-24T13:25:21.931Z"
+    "at": "2026-10-24T13:55:23.432Z"
   },
   "2026-10-19:story-sat-am": {
     "status": "posted",
