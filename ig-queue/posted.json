@@ -549,5 +549,19 @@
     "media_id": "18647598568041891",
     "permalink": "https://www.instagram.com/stories/staysocialnyc/4015142032049655327",
     "at": "2026-10-24T17:17:50.751Z"
+  },
+  "2026-10-19:sat-tonight-reel": {
+    "status": "failed",
+    "id": "sat-tonight-reel",
+    "tries": 1,
+    "error": "User not visible (code 210/2207066)",
+    "at": "2026-10-24T23:03:40.052Z"
+  },
+  "2026-10-19:story-sat-pm": {
+    "status": "posted",
+    "id": "story-sat-pm",
+    "media_id": "18088553687288474",
+    "permalink": "https://www.instagram.com/stories/staysocialnyc/4015316267480982451",
+    "at": "2026-10-24T23:03:50.458Z"
   }
 }
