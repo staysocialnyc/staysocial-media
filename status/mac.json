@@ -62,5 +62,9 @@
   "ig:2026-10-26:deadline": {
     "value": "not_approved",
     "at": "2026-10-25T21:28:51.843Z"
+  },
+  "nl:2026-10-29:research": {
+    "value": "done",
+    "at": "2026-10-27T16:27:34.351Z"
   }
 }
