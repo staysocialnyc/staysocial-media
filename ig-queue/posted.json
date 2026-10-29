@@ -700,5 +700,24 @@
     "media_id": "17937905364405159",
     "permalink": "https://www.instagram.com/stories/staysocialnyc/4018250582309317981",
     "at": "2026-10-29T00:13:45.483Z"
+  },
+  "2026-10-26:thu-this-weekend": {
+    "status": "missed",
+    "id": "thu-this-weekend",
+    "at": "2026-10-29T18:29:54.047Z",
+    "note": "more than 3 hours late; skipped"
+  },
+  "2026-10-26:story-thu-am": {
+    "status": "missed",
+    "id": "story-thu-am",
+    "at": "2026-10-29T18:29:54.047Z",
+    "note": "more than 3 hours late; skipped"
+  },
+  "2026-10-26:story-thu-q": {
+    "status": "posted",
+    "id": "story-thu-q",
+    "media_id": "18377293603213540",
+    "permalink": "https://www.instagram.com/stories/staysocialnyc/4018802360658264664",
+    "at": "2026-10-29T18:30:01.997Z"
   }
 }
