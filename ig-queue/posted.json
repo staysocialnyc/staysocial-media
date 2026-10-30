@@ -731,5 +731,19 @@
     "id": "story-thu-pm",
     "at": "2026-10-30T02:24:16.229Z",
     "note": "more than 3 hours late; skipped"
+  },
+  "2026-10-26:fri-relatable": {
+    "status": "posted",
+    "id": "fri-relatable",
+    "media_id": "18109454276631287",
+    "permalink": "https://www.instagram.com/p/DfH6GaREZ_0/",
+    "at": "2026-10-30T15:30:38.192Z"
+  },
+  "2026-10-26:story-fri-am": {
+    "status": "posted",
+    "id": "story-fri-am",
+    "media_id": "18116619964831146",
+    "permalink": "https://www.instagram.com/stories/staysocialnyc/4019436904822966239",
+    "at": "2026-10-30T15:30:46.947Z"
   }
 }
