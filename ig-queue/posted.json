@@ -800,5 +800,19 @@
     "media_id": "17970773675966271",
     "permalink": "https://www.instagram.com/stories/staysocialnyc/4020464047249774004",
     "at": "2026-11-01T01:31:41.125Z"
+  },
+  "2026-10-26:sun-culture-carousel": {
+    "status": "posted",
+    "id": "sun-culture-carousel",
+    "media_id": "18135150634778484",
+    "permalink": "https://www.instagram.com/p/DfNA9MQF7PC/",
+    "at": "2026-11-01T15:06:32.077Z"
+  },
+  "2026-10-26:story-sun-am": {
+    "status": "failed",
+    "id": "story-sun-am",
+    "tries": 1,
+    "error": "Media ID is not available (code 9007/2207027)",
+    "at": "2026-11-01T15:06:35.984Z"
   }
 }
