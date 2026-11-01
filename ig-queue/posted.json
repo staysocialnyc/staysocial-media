@@ -809,10 +809,16 @@
     "at": "2026-11-01T15:06:32.077Z"
   },
   "2026-10-26:story-sun-am": {
-    "status": "failed",
+    "status": "missed",
     "id": "story-sun-am",
-    "tries": 1,
-    "error": "Media ID is not available (code 9007/2207027)",
-    "at": "2026-11-01T15:06:35.984Z"
+    "at": "2026-11-01T19:38:41.025Z",
+    "note": "more than 3 hours late; skipped"
+  },
+  "2026-10-26:story-sun-q": {
+    "status": "posted",
+    "id": "story-sun-q",
+    "media_id": "18412759036090163",
+    "permalink": "https://www.instagram.com/stories/staysocialnyc/4021011317108795766",
+    "at": "2026-11-01T19:39:03.240Z"
   }
 }
