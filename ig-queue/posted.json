@@ -876,5 +876,11 @@
     "id": "story-tue-am",
     "at": "2026-11-03T17:22:32.021Z",
     "note": "more than 3 hours late; skipped"
+  },
+  "2026-11-02:story-tue-q": {
+    "status": "missed",
+    "id": "story-tue-q",
+    "at": "2026-11-03T22:27:28.593Z",
+    "note": "more than 3 hours late; skipped"
   }
 }
