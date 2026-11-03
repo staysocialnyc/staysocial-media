@@ -86,5 +86,9 @@
   "nl:2026-10-29:final_deadline": {
     "value": "ALREADY_HANDLED",
     "at": "2026-10-28T19:31:07.241Z"
+  },
+  "ig:2026-11-02:drafted": {
+    "value": "done",
+    "at": "2026-11-03T15:40:15.728Z"
   }
 }
