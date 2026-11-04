@@ -908,5 +908,11 @@
     "id": "story-wed-am",
     "at": "2026-11-04T17:43:36.198Z",
     "note": "more than 3 hours late; skipped"
+  },
+  "2026-11-02:story-wed-q": {
+    "status": "missed",
+    "id": "story-wed-q",
+    "at": "2026-11-04T22:54:23.480Z",
+    "note": "more than 3 hours late; skipped"
   }
 }
