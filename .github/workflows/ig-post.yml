@@ -1,6 +1,8 @@
 # Posts approved Instagram content when it's due (9 AM / 1 PM / 7 PM New York time).
-# Runs on GitHub's servers every 15 minutes, so it works while the Mac is off.
-# The queue (ig-queue/<week>.json) holds only posts the owners approved.
+# Runs on GitHub's servers, so it works while the Mac is off. The queue (ig-queue/<week>.json) holds only approved posts.
+# Since Oct 26, 2026 GitHub starts the 15-minute schedule only 3–5 times a day, which made posts late or skipped.
+# So each run waits (up to ~5 h 20 min) and posts every item on time, then starts the next run itself while posts
+# are still queued. The schedule stays as a backstop that restarts the chain. Public repo: Actions minutes are free.
 name: Instagram posts
 on:
   schedule:
@@ -8,30 +10,28 @@ on:
   workflow_dispatch: {}
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: ig-post
   cancel-in-progress: false
 jobs:
   post:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Post what's due
+      - name: Post what's due, on time
+        id: post
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-        run: node .github/scripts/ig_post.mjs
-      - name: Save the posting log
-        run: |
-          if [ -n "$(git status --porcelain ig-queue/posted.json)" ]; then
-            git config user.name "staysocial-bot"
-            git config user.email "staysocial-bot@users.noreply.github.com"
-            git add ig-queue/posted.json
-            git commit -m "Instagram posting log"
-            git pull --rebase origin main
-            git push origin main
-          fi
+          IG_WAIT_MINUTES: "320"
+        run: node .github/scripts/ig_post.mjs --wait
+      - name: Start the next waiting run
+        if: steps.post.outputs.more == 'yes'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run ig-post.yml -R "$GITHUB_REPOSITORY" --ref main

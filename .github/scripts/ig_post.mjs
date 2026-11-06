@@ -72,6 +72,33 @@ if (checkId) {
   process.exit(0);
 }
 
+// Since Oct 26, 2026 GitHub starts the "every 15 minutes" schedule only 3–5 times a day, so posts went out hours late
+// or were skipped. With --wait, the run stays up and posts each item on time (up to IG_WAIT_MINUTES), saving the log
+// after every pass; the workflow then starts the next run, so one is always waiting while approved posts are queued.
+const WAIT_MS = process.argv.includes("--wait") ? Number(process.env.IG_WAIT_MINUTES || 320) * 60e3 : 0;
+const START = Date.now();
+const { execSync } = await import("node:child_process");
+const sh = (c) => execSync(c, { stdio: "pipe" }).toString();
+function reload() {
+  if (!WAIT_MS) return;
+  try { sh("git pull --rebase --quiet origin main"); } catch (e) { console.log(`  (pull failed: ${e.message.split("\n")[0]})`); }
+  Object.keys(posted).forEach((k) => delete posted[k]);
+  if (existsSync(LOG)) Object.assign(posted, JSON.parse(readFileSync(LOG, "utf8")));
+  queue.length = 0;
+  queue.push(...readdirSync("ig-queue").filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).flatMap((f) => JSON.parse(readFileSync(`ig-queue/${f}`, "utf8")).items || []));
+}
+function save() {
+  writeFileSync(LOG, JSON.stringify(posted, null, 2) + "\n");
+  if (!WAIT_MS) return;
+  try {
+    sh(`git config user.name staysocial-bot && git config user.email staysocial-bot@users.noreply.github.com && git add ${LOG} && git commit -qm "Instagram posting log"`);
+    sh("git pull --rebase --quiet origin main && git push --quiet origin main");
+  } catch (e) { console.log(`  (saving log failed: ${e.message.split("\n")[0]})`); }
+}
+const pending = (it) => { const r = posted[it.key] || {}; return !(r.status === "posted" || r.status === "missed" || (r.status === "failed" && r.tries >= MAX_TRIES)); };
+
+for (;;) {
+reload();
 const now = Date.now();
 let changed = false;
 for (const item of queue.sort((a, b) => a.at.localeCompare(b.at))) {
@@ -101,5 +128,17 @@ for (const item of queue.sort((a, b) => a.at.localeCompare(b.at))) {
   }
   changed = true;
 }
-if (changed) writeFileSync(LOG, JSON.stringify(posted, null, 2) + "\n");
+if (changed) save();
 console.log(changed ? "posted.json updated" : "Nothing due.");
+const next = queue.filter((it) => pending(it) && Date.parse(it.at) > Date.now()).map((it) => Date.parse(it.at)).sort((a, b) => a - b)[0];
+const end = START + WAIT_MS;
+if (!WAIT_MS || !next || Date.now() > end - 60e3) {
+  // Tell the workflow whether to start the next waiting run (only while approved posts are still queued).
+  if (process.env.GITHUB_OUTPUT) writeFileSync(process.env.GITHUB_OUTPUT, `more=${next ? "yes" : "no"}\n`, { flag: "a" });
+  break;
+}
+// Wake for the next post, or every 15 minutes to pick up queue changes (Wednesday fill, change requests).
+const wake = Math.min(next + 20e3, Date.now() + 15 * 60e3, end);
+console.log(`Next post ${new Date(next).toISOString()}; checking again at ${new Date(wake).toISOString()}`);
+await sleep(Math.max(0, wake - Date.now()));
+}
