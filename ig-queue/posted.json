@@ -933,5 +933,18 @@
     "media_id": "18080975684407426",
     "permalink": "https://www.instagram.com/stories/staysocialnyc/4023875683546022260",
     "at": "2026-11-05T18:30:00.771Z"
+  },
+  "2026-11-02:fri-relatable": {
+    "status": "missed",
+    "id": "fri-relatable",
+    "at": "2026-11-06T19:42:55.949Z",
+    "note": "more than 3 hours late; skipped"
+  },
+  "2026-11-02:story-fri-q": {
+    "status": "posted",
+    "id": "story-fri-q",
+    "media_id": "17899651707405317",
+    "permalink": "https://www.instagram.com/stories/staysocialnyc/4024637322133888623",
+    "at": "2026-11-06T19:43:05.501Z"
   }
 }
