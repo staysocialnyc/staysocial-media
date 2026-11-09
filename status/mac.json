@@ -106,5 +106,9 @@
   "nl:2026-11-05:final_deadline": {
     "value": "NO_FINAL_BUILT",
     "at": "2026-11-04T20:54:59.738Z"
+  },
+  "nl:2026-11-12:research": {
+    "value": "done",
+    "at": "2026-11-09T15:32:47.654Z"
   }
 }
