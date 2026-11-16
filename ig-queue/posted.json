@@ -1002,5 +1002,24 @@
     "media_id": "18212683264366333",
     "permalink": "https://www.instagram.com/p/Dff_vSXFABb/",
     "at": "2026-11-09T00:01:28.104Z"
+  },
+  "2026-11-16:mon-week-ahead": {
+    "status": "missed",
+    "id": "mon-week-ahead",
+    "at": "2026-11-16T20:39:01.508Z",
+    "note": "more than 3 hours late; skipped"
+  },
+  "2026-11-16:story-mon-am": {
+    "status": "missed",
+    "id": "story-mon-am",
+    "at": "2026-11-16T20:39:01.508Z",
+    "note": "more than 3 hours late; skipped"
+  },
+  "2026-11-16:story-mon-q": {
+    "status": "posted",
+    "id": "story-mon-q",
+    "media_id": "18091243922700250",
+    "permalink": "https://www.instagram.com/stories/staysocialnyc/4031913316405834260",
+    "at": "2026-11-16T20:39:22.601Z"
   }
 }
