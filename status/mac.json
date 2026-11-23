@@ -162,5 +162,9 @@
   "nl:2026-11-19:final_deadline": {
     "value": "NOT_SENT",
     "at": "2026-11-18T20:31:07.048Z"
+  },
+  "nl:2026-11-26:research": {
+    "value": "done",
+    "at": "2026-11-23T16:16:03.604Z"
   }
 }
